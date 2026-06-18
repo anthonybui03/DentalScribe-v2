@@ -189,7 +189,7 @@ class MainWindow(ctk.CTkFrame):
         banner.grid_propagate(False)
         ctk.CTkLabel(banner,
                      text="⚠  AI-generated notes require provider review before chart entry",
-                     font=ctk.CTkFont("Segoe UI", 11, "italic" ),
+                     font=ctk.CTkFont("Segoe UI", 11, slant="italic"),
                      text_color="#B45309").place(x=14, rely=0.5, anchor="w")
 
         # Two panels
