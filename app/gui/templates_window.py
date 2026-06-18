@@ -81,7 +81,7 @@ class TemplatesWindow(ctk.CTkToplevel):
         for w in self._list_frame.winfo_children():
             w.destroy()
         for name, data in TEMPLATES.items():
-            is_builtin = data.get("builtin", False)
+            is_builtin = data.builtin
             lbl = f"{name}  {'(built-in)' if is_builtin else ''}"
             btn = ctk.CTkButton(self._list_frame, text=lbl, anchor="w",
                                 fg_color="transparent",
@@ -97,8 +97,8 @@ class TemplatesWindow(ctk.CTkToplevel):
         self._name_var.set(name)
         self._body.configure(state="normal")
         self._body.delete("1.0", "end")
-        self._body.insert("end", data.get("skeleton", ""))
-        is_builtin = data.get("builtin", False)
+        self._body.insert("end", data.skeleton)
+        is_builtin = data.builtin
         self._set_editor_enabled(not is_builtin)
         if is_builtin:
             self._body.configure(state="disabled")
