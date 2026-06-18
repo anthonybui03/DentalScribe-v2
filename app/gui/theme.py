@@ -45,37 +45,37 @@ def divider(parent) -> ctk.CTkFrame:
 
 
 def primary_btn(parent, text, command=None, **kw) -> ctk.CTkButton:
-    return ctk.CTkButton(parent, text=text, command=command,
-                         fg_color=C["accent"], hover_color=C["accent_dark"],
-                         text_color="#ffffff", corner_radius=8,
-                         font=ctk.CTkFont("Segoe UI", 12, weight="bold"), **kw)
+    defaults = dict(fg_color=C["accent"], hover_color=C["accent_dark"],
+                    text_color="#ffffff", corner_radius=8,
+                    font=ctk.CTkFont("Segoe UI", 12, weight="bold"))
+    defaults.update(kw)
+    return ctk.CTkButton(parent, text=text, command=command, **defaults)
 
 
 def ghost_btn(parent, text, command=None, **kw) -> ctk.CTkButton:
-    return ctk.CTkButton(parent, text=text, command=command,
-                         fg_color="transparent", hover_color=C["border"],
-                         text_color=C["text2"], border_width=1,
-                         border_color=C["border"], corner_radius=8,
-                         font=ctk.CTkFont("Segoe UI", 11), **kw)
+    defaults = dict(fg_color="transparent", hover_color=C["border"],
+                    text_color=C["text2"], border_width=1,
+                    border_color=C["border"], corner_radius=8,
+                    font=ctk.CTkFont("Segoe UI", 11))
+    defaults.update(kw)
+    return ctk.CTkButton(parent, text=text, command=command, **defaults)
 
 
 def subtle_btn(parent, text, command=None, **kw) -> ctk.CTkButton:
-    return ctk.CTkButton(parent, text=text, command=command,
-                         fg_color="transparent", hover_color=C["surface"],
-                         text_color=C["text2"], corner_radius=8,
-                         font=ctk.CTkFont("Segoe UI", 11), **kw)
+    defaults = dict(fg_color="transparent", hover_color=C["surface"],
+                    text_color=C["text2"], corner_radius=8,
+                    font=ctk.CTkFont("Segoe UI", 11))
+    defaults.update(kw)
+    return ctk.CTkButton(parent, text=text, command=command, **defaults)
 
 
 def make_entry(parent, textvariable=None, placeholder="", show="", **kw) -> ctk.CTkEntry:
-    return ctk.CTkEntry(parent,
-                        textvariable=textvariable,
-                        placeholder_text=placeholder,
-                        show=show,
-                        fg_color=C["bg"],
-                        border_color=C["border"],
-                        text_color=C["text"],
-                        placeholder_text_color=C["text3"],
-                        corner_radius=8, **kw)
+    defaults = dict(fg_color=C["bg"], border_color=C["border"],
+                    text_color=C["text"], placeholder_text_color=C["text3"],
+                    corner_radius=8)
+    defaults.update(kw)
+    return ctk.CTkEntry(parent, textvariable=textvariable,
+                        placeholder_text=placeholder, show=show, **defaults)
 
 
 def make_textbox(parent, **kw) -> ctk.CTkTextbox:
