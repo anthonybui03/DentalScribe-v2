@@ -79,16 +79,19 @@ def make_entry(parent, textvariable=None, placeholder="", show="", **kw) -> ctk.
 
 
 def make_textbox(parent, **kw) -> ctk.CTkTextbox:
-    return ctk.CTkTextbox(parent,
-                          fg_color=C["surface"],
-                          text_color=C["text"],
-                          font=ctk.CTkFont("Consolas", 11),
-                          corner_radius=10,
-                          border_width=1,
-                          border_color=C["border"],
-                          scrollbar_button_color=C["border"],
-                          scrollbar_button_hover_color=C["text3"],
-                          wrap="word", **kw)
+    defaults = dict(
+        fg_color=C["surface"],
+        text_color=C["text"],
+        font=ctk.CTkFont("Consolas", 11),
+        corner_radius=10,
+        border_width=1,
+        border_color=C["border"],
+        scrollbar_button_color=C["border"],
+        scrollbar_button_hover_color=C["text3"],
+        wrap="word",
+    )
+    defaults.update(kw)
+    return ctk.CTkTextbox(parent, **defaults)
 
 
 def make_combo(parent, values=None, command=None, **kw) -> ctk.CTkComboBox:
