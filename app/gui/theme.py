@@ -108,4 +108,4 @@ def make_combo(parent, values=None, command=None, **kw) -> ctk.CTkComboBox:
                            dropdown_hover_color=C["accent"],
                            corner_radius=8,
                            font=ctk.CTkFont("Segoe UI", 11),
-                           state="readonly", **kw)
+                           state="normal", **kw)
