@@ -53,7 +53,9 @@ class SettingsWindow(ctk.CTkToplevel):
         row.pack(fill="x", pady=4)
         ctk.CTkLabel(row, text=label, width=160, anchor="w",
                      font=make_font(11), text_color=C["text2"]).pack(side="left")
-        return widget_fn(row, *a, **kw)
+        widget = widget_fn(row, *a, **kw)
+        widget.pack(side="left")
+        return widget
 
     def _build_transcription(self, parent) -> None:
         ctk.CTkLabel(parent, text="Whisper Settings",
