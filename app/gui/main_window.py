@@ -224,7 +224,7 @@ class MainWindow(ctk.CTkFrame):
                      font=ctk.CTkFont("Segoe UI", 13, weight="bold"),
                      text_color=C["text"]).pack(side="left")
         ctk.CTkLabel(nh, text="Editable — review before use",
-                     font=ctk.CTkFont("Segoe UI", 10, "italic"),
+                     font=ctk.CTkFont("Segoe UI", 10, slant="italic"),
                      text_color=C["text3"]).pack(side="left", padx=8)
 
         self._note_box = T.make_textbox(panels, fg_color=C["surface2"])
