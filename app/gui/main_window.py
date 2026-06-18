@@ -165,7 +165,7 @@ class MainWindow(ctk.CTkFrame):
                                            padx=12, pady=4)
         self._patient_chip.pack(side="left", padx=(0, 6))
         self._template_chip = ctk.CTkLabel(left_chips, text="Custom / Freeform",
-                                            fg_color="#1D4ED820", corner_radius=20,
+                                            fg_color="#1D4ED8", corner_radius=20,
                                             font=ctk.CTkFont("Segoe UI", 11),
                                             text_color="#60A5FA",
                                             padx=12, pady=4)
